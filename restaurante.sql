@@ -1,0 +1,38 @@
+CREATE TABLE Bebida (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+volume INT NOT NULL,
+alcoolico BOOLEAN NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+CHECK (CHAR_LENGTH(nome) >= 3),
+CHECK (volume > 200),
+CHECK (alcoolico IN (TRUE, FALSE)),
+CHECK (preco > 0)
+);
+
+CREATE TABLE Sobremesa (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+CHECK (CHAR_LENGTH(nome) >= 3),
+CHECK (preco >= 0)
+);
+
+CREATE TABLE Sobremesa (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+CHECK (CHAR_LENGTH(nome) >= 3),
+CHECK (preco >= 0)
+);
+
+INSERT INTO Sobremesa (nome, preco)
+VALUES ('Pudim', 12.50);
+
+INSERT INTO Sobremesa (nome, preco)
+VALUES ('Bolo', 0);
+
+SELECT * FROM Sobremesa;
+
+preco DECIMAL(10,2) NOT NULL
+
